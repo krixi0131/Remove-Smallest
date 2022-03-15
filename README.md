@@ -1,23 +1,19 @@
 # Remove-Smallest
-You are given an array a1,a2,…,an, which is sorted in non-decreasing order (ai≤ai+1).
+You are given the array a consisting of n positive (greater than zero) integers.
 
-Find three indices i, j, k such that 1≤i<j<k≤n and it is impossible to construct a non-degenerate triangle (a triangle with nonzero area) having sides equal to ai, aj and ak (for example it is possible to construct a non-degenerate triangle with sides 3, 4 and 5 but impossible with sides 3, 4 and 7). If it is impossible to find such triple, report it.
+In one move, you can choose two indices i and j (i≠j) such that the absolute difference between ai and aj is no more than one (|ai−aj|≤1) and remove the smallest of these two elements. If two elements are equal, you can remove any of them (but exactly one).
+
+Your task is to find if it is possible to obtain the array consisting of only one element using several (possibly, zero) such moves or not.
+
+You have to answer t independent test cases.
 
 Input
-The first line contains one integer t (1≤t≤1000) — the number of test cases.
+The first line of the input contains one integer t (1≤t≤1000) — the number of test cases. Then t test cases follow.
 
-The first line of each test case contains one integer n (3≤n≤5⋅104) — the length of the array a.
-
-The second line of each test case contains n integers a1,a2,…,an (1≤ai≤109; ai−1≤ai) — the array a.
-
-It is guaranteed that the sum of n over all test cases does not exceed 105.
+The first line of the test case contains one integer n (1≤n≤50) — the length of a. The second line of the test case contains n integers a1,a2,…,an (1≤ai≤100), where ai is the i-th element of a.
 
 Output
-For each test case print the answer to it in one line.
-
-If there is a triple of indices i, j, k (i<j<k) such that it is impossible to construct a non-degenerate triangle having sides equal to ai, aj and ak, print that three indices in ascending order. If there are multiple answers, print any of them.
-
-Otherwise, print -1.
+For each test case, print the answer: "YES" if it is possible to obtain the array consisting of only one element using several (possibly, zero) moves described in the problem statement, or "NO" otherwise.
 ```python
 t=int(input())
 for count in range(t):
